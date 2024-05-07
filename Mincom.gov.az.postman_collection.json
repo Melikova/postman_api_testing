@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "b3b61fcd-1c9f-403c-97c6-ea45a96e8699",
+		"name": "Mincom.gov.az",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23050188"
+	},
+	"item": [
+		{
+			"name": "Get E xidmetler",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check Status Code Telekomunikasiya\",()=>{\r",
+							"    pm.expect(pm.response.code).to.eql(200)\r",
+							"})\r",
+							"pm.test(\"Check Status  Telekomunikasiya\",()=>{\r",
+							"    pm.expect(pm.response.status).to.eql(\"OK\")\r",
+							"})\r",
+							"pm.test(\"Check Status Time Telekomunikasiya\",()=>{\r",
+							"    pm.expect(pm.response.code).to.be.below(500)\r",
+							"})\r",
+							"\r",
+							"let response = pm.response.json();\r",
+							"console.log(response)\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://portal-api.rinn.az/api/v1/home/category/38",
+					"protocol": "https",
+					"host": [
+						"portal-api",
+						"rinn",
+						"az"
+					],
+					"path": [
+						"api",
+						"v1",
+						"home",
+						"category",
+						"38"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRadio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check Status Code Radio\",()=>{\r",
+							"    pm.expect(pm.response.code).to.eql(200)\r",
+							"})\r",
+							"pm.test(\"Check Status  Radio\",()=>{\r",
+							"    pm.expect(pm.response.status).to.eql(\"OK\")\r",
+							"})\r",
+							"pm.test(\"Check Status Time Radio\",()=>{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"})\r",
+							"\r",
+							"\r",
+							"let Data = pm.response.array[0];\r",
+							"console.log(Data.leng)\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://portal-api.rinn.az/api/v1/home/documentTypeGroupsKeyValue",
+					"protocol": "https",
+					"host": [
+						"portal-api",
+						"rinn",
+						"az"
+					],
+					"path": [
+						"api",
+						"v1",
+						"home",
+						"documentTypeGroupsKeyValue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Radio Mane home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check Status Code Radio\",()=>{\r",
+							"    pm.expect(pm.response.code).to.eql(200)\r",
+							"})\r",
+							"pm.test(\"Check Status  Radio\",()=>{\r",
+							"    pm.expect(pm.response.status).to.eql(\"OK\")\r",
+							"})\r",
+							"pm.test(\"Check Status Time Radio\",()=>{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://portal-api.rinn.az/api/v1/home/serviceApplicantTypeKeyValue?filterId=1",
+					"protocol": "https",
+					"host": [
+						"portal-api",
+						"rinn",
+						"az"
+					],
+					"path": [
+						"api",
+						"v1",
+						"home",
+						"serviceApplicantTypeKeyValue"
+					],
+					"query": [
+						{
+							"key": "filterId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://portal-api.rinn.az/api/v1/home/documentTypesKeyValue/1?filterId=1",
+					"protocol": "https",
+					"host": [
+						"portal-api",
+						"rinn",
+						"az"
+					],
+					"path": [
+						"api",
+						"v1",
+						"home",
+						"documentTypesKeyValue",
+						"1"
+					],
+					"query": [
+						{
+							"key": "filterId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApplicantPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://portal-api.rinn.az/api/v1/radio/applicant",
+					"protocol": "https",
+					"host": [
+						"portal-api",
+						"rinn",
+						"az"
+					],
+					"path": [
+						"api",
+						"v1",
+						"radio",
+						"applicant"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
