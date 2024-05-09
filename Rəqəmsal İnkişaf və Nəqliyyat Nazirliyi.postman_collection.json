@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "551fad54-1bec-4d8b-8d94-1a6c76829ce9",
+		"_postman_id": "4fc7565e-e821-48b5-b77d-204c6eef81b5",
 		"name": "Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "31854063"
+		"_exporter_id": "15043613"
 	},
 	"item": [
 		{
@@ -24,10 +24,14 @@
 							"    // pm.expect(myResponse).is.not.oneOf([null,\" \"])\r",
 							"    // pm.expect(myResponse).not.to.be.an( \"object\")\r",
 							"    // pm.expect(myResponse).to.be.an('object')\r",
-							"    // pm.expect(myResponse).not.to.be.oneOf([\"object\",null ])  ???? niyə pass olur???? \r",
+							"    console.log(typeof myResponse);\r",
+							"    // bir assertion icinde typeof ile deyeri eyni yoxlamaya vermek olmur. eyni xarakterli olmali yoxlamaya verilmiw data. object typeof-dur, null ise deyerdir.\r",
+							"    pm.expect(myResponse).not.to.be.oneOf([\"object\",null]) // ???? niyə pass olur???? \r",
 							"    // pm.expect(myResponse).is.not.oneOf([\"object\",\" \"])  ???? niyə pass olur???? \r",
 							"    console.log(myResponse)\r",
 							"})\r",
+							"\r",
+							"\r",
 							"pm.test(\"check serviceCategories quantity\",()=>{\r",
 							"    console.log(myResponse.category.serviceCategories.length)\r",
 							"    pm.expect(myResponse.category.serviceCategories.length).to.eql(14)\r",
