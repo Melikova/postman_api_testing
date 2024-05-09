@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "b3b61fcd-1c9f-403c-97c6-ea45a96e8699",
+		"_postman_id": "e4ed9b66-a102-4e0c-ae13-b1c7ba7cc8d6",
 		"name": "Mincom.gov.az",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23050188"
+		"_exporter_id": "15043613"
 	},
 	"item": [
 		{
@@ -93,9 +93,12 @@
 							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
 							"})\r",
 							"\r",
-							"\r",
-							"let Data = pm.response.array[0];\r",
-							"console.log(Data.leng)\r",
+							"// let Data = pm.response.array[0];\r",
+							"// data artiq by default postman-da movcuddur, iwletmek olmaz. bu sebebden yeqin boyukle yazmisan. Amma js-de boyuk herfle bawlamir variable adlari.\r",
+							"// response ozu butun gelen cavabi yeni header, status ve s ozunde birlewdirir. Bize body lazimdirsa, onu response.json() metody ile gotururuk. \r",
+							"// objectin icindeki 'items' acarini goturmek lazim. Array odur. Onu da elde etmek ucun 'object.key' formatindan istifade olunur. \r",
+							"let res = pm.response.json();\r",
+							"console.log(res.items.length);\r",
 							""
 						],
 						"type": "text/javascript",
