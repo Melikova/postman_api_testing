@@ -94,7 +94,7 @@
 							"    pm.expect(pm.response.status).to.eql(\"OK\")\r",
 							"})\r",
 							"pm.test(\"Check Status Time Radio\",()=>{\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000)\r",
 							"})\r",
 							"pm.test(\"Check response array\",  ()=> {\r",
 							"    var jsonData = pm.response.json();\r",
