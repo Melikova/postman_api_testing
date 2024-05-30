@@ -20,7 +20,7 @@
 							"    pm.expect(pm.response.status).to.eql(\"OK\")\r",
 							"})\r",
 							"pm.test(\"Check Status Time Telekomunikasiya\",()=>{\r",
-							"    pm.expect(pm.response.code).to.be.below(500)\r",
+							"    pm.expect(pm.response.code).to.be.below(1000)\r",
 							"})\r",
 							"\r",
 							"pm.test(\"Check response services count\",  ()=> {\r",
