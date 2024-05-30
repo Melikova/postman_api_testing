@@ -36,3 +36,6 @@ jobs:
       with:
         name: newman-report
         path: newman/*.html
+
+    - name: List newman directory (debugging step)
+      run: ls -la newman
