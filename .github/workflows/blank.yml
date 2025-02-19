@@ -19,29 +19,35 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Install Newman
+    - name: Install Newman Globally
       run: npm install -g newman@latest
 
-    - name: List newman directory (debugging step)
-      run: ls -la newman
+    - name: Debug: Check Installed Global Packages
+      run: npm list -g --depth=0
 
-    - name: Install Reporter
-      run: npm install -g newman-reporter-htmlextra
+    - name: Debug: Show Global npm Path
+      run: npm root -g
 
-    - name: List newman directory (debugging step)
-      run: ls -la newman
+    - name: Install `htmlextra` Reporter Globally
+      run: npm install -g newman-reporter-htmlextra@latest
+
+    - name: Debug: Check Installed Global Packages Again
+      run: npm list -g --depth=0
+
+    - name: Debug: List Global Node Modules Directory
+      run: ls -la $(npm root -g)
+
+    - name: Debug: Check Where Newman & Reporters Are Installed
+      run: which newman && which newman-reporter-htmlextra || true
 
     - name: Run Postman Collection
-      run: npx newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json -r htmlextra, cli
+      run: newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json -r htmlextra,cli
 
-    - name: List newman directory (debugging step)
-      run: ls -la newman
+    - name: Debug: List Generated Report Files
+      run: ls -la newman || true
 
     - name: Upload Test Report
       uses: actions/upload-artifact@v4
       with:
         name: newman-report
         path: newman/*.html
-
-    - name: List newman directory (debugging step)
-      run: ls -la newman
