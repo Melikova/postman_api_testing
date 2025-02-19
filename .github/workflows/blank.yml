@@ -22,11 +22,14 @@ jobs:
     - name: Install Newman
       run: npm install -g newman@latest
 
-    - name: Install Reporter
-      run: npm install -g newman-reporter-htmlextra
+    # - name: Install Reporter
+    #   run: npm install -g newman-reporter-htmlextra
+
+    # - name: Run Postman Collection
+    #   run: newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json -r htmlextra, cli
 
     - name: Run Postman Collection
-      run: newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json -r htmlextra, cli
+      run: newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json
 
     - name: List newman directory (debugging step)
       run: ls -la newman
