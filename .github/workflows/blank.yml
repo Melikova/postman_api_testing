@@ -32,7 +32,7 @@ jobs:
       run: ls -la newman
 
     - name: Run Postman Collection
-      run: newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json -r htmlextra, cli
+      run: npx newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json -r htmlextra, cli
 
     - name: List newman directory (debugging step)
       run: ls -la newman
