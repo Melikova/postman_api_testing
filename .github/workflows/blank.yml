@@ -22,28 +22,28 @@ jobs:
     - name: Install Newman Globally
       run: npm install -g newman@latest
 
-    - name: Debug: Check Installed Global Packages
+    - name: Debug:Check Installed Global Packages
       run: npm list -g --depth=0
 
-    - name: Debug: Show Global npm Path
+    - name: Debug:Show Global npm Path
       run: npm root -g
 
     - name: Install `htmlextra` Reporter Globally
       run: npm install -g newman-reporter-htmlextra@latest
 
-    - name: Debug: Check Installed Global Packages Again
+    - name: Debug:Check Installed Global Packages Again
       run: npm list -g --depth=0
 
-    - name: Debug: List Global Node Modules Directory
+    - name: Debug:List Global Node Modules Directory
       run: ls -la $(npm root -g)
 
-    - name: Debug: Check Where Newman & Reporters Are Installed
+    - name: Debug:Check Where Newman & Reporters Are Installed
       run: which newman && which newman-reporter-htmlextra || true
 
     - name: Run Postman Collection
       run: newman run Mincom.gov.az_2.postman_collection.json -e Mincom.postman_environment.json -r htmlextra,cli
 
-    - name: Debug: List Generated Report Files
+    - name: Debug:List Generated Report Files
       run: ls -la newman || true
 
     - name: Upload Test Report
